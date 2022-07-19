@@ -35,7 +35,7 @@ const getGifs=(event)=>{
    
     console.log("hola")
     console.log(event.target.value)
-    fetch('https://api.giphy.com/v1/gifs/search?api_key=PCkOodNTdJLNsYI6Ybtm8mS1e1vzGkGE&q='+event.target.value+'&limit=2&offset=0&rating=g&lang=en')
+    fetch('https://api.giphy.com/v1/gifs/search?api_key=PCkOodNTdJLNsYI6Ybtm8mS1e1vzGkGE&q='+event.target.value+'&limit=10&offset=0&rating=g&lang=en')
     .then(response=>response.json())
     .then(data=>{
         console.log(data.data)
@@ -58,7 +58,10 @@ const getGifs=(event)=>{
             <InputSearch action={getGifs} /> 
             </div>
         </header>
-        <GifCard cardGif={gif} />
+        <main className='main'>
+         <GifCard cardGif={gif} />
+        </main>
+        
     </div>
   )
 }

@@ -15,10 +15,14 @@ code {
 .header-home{
   display: flex;
   align-items: center;
-  gap: 8%; 
+  gap: 0; 
+  position: fixed;
+  left:0;
+  right: 0;
+  z-index: 10;
 }
 .divHeader{
-  background-color: rgb(37, 109, 43);
+  background-color: rgb(7, 83, 42);
   width: 100%;
   height: 15em;
   display: flex;
@@ -29,4 +33,48 @@ code {
   width: 30%;
   height: 50px;
   border-radius: 13px;
+  font-size: 30px;
+}
+
+.conter_car .car {
+  text-align: center;
+  width: 20rem;
+  height: 27rem;
+  box-shadow: 0 0 25px rgb(43, 63, 248);
+  border-radius: 15px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  gap: 8px;
+  flex-wrap: wrap;
+
+}
+.img-cardGif {
+  width: 100%;
+  height: 100vh;
+  border-radius: 15px 15px 0 0;
+  object-fit: unset;
+  
+}
+.main{
+  padding-top: 300px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3px;
+}
+
+.conter_car {
+  padding-top: 70px;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3px;
+
 }
