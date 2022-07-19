@@ -20,6 +20,7 @@ code {
   left:0;
   right: 0;
   z-index: 10;
+  top: 0;
 }
 .divHeader{
   background-color: rgb(7, 83, 42);

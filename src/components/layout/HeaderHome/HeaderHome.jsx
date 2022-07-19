@@ -4,51 +4,28 @@ import { Logo } from '../../ui/Logo'
 import { GifCard } from '../GifCard/GifCard';
 
 export const HeaderHome = () => {
-    const url='https://api.giphy.com/v1/gifs/trending?api_key=PCkOodNTdJLNsYI6Ybtm8mS1e1vzGkGE&limit=3&rating=g';
+    
+    const url='https://api.giphy.com/v1/gifs/trending?api_key=PCkOodNTdJLNsYI6Ybtm8mS1e1vzGkGE&limit=10&rating=g';
     const api_key='PCkOodNTdJLNsYI6Ybtm8mS1e1vzGkGE'
     const [gif, setGif] = useState([]);
- /** 
-    const getGif=async()=>{
-        console.log("hola")
-        const responce=await fetch(url);
-        const data=responce.json();
-        setGif(data)
-        console.log(data)
-        
-    }
-
-**/
-const get=()=>{
-    console.log("hola")
-    fetch(url)
-    .then(response=>response.json())
-    .then(data=>{
-        console.log(data.data)
+  
+    const getApi=async()=>{
+        const response=await fetch(url);
+        const data=await response.json();
         setGif(data.data)
-       
+        return data
     }
-    )
 
-}
-
-const getGifs=(event)=>{
-   
-    console.log("hola")
-    console.log(event.target.value)
-    fetch('https://api.giphy.com/v1/gifs/search?api_key=PCkOodNTdJLNsYI6Ybtm8mS1e1vzGkGE&q='+event.target.value+'&limit=10&offset=0&rating=g&lang=en')
-    .then(response=>response.json())
-    .then(data=>{
-        console.log(data.data)
-        setGif(data.data) 
+    const getGifs=async(event)=>{
+        const response=await  fetch('https://api.giphy.com/v1/gifs/search?api_key='+api_key+'&q='+event.target.value+'&limit=10&offset=0&rating=g&lang=en');
+        const data=await response.json();
+        setGif(data.data)
+        return data
     }
-    )
 
-}
     useEffect(() => {
-        get()
+        getApi()
     }, [])
-
-   
 
   return (
     <div>
